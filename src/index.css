@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zoom-in-out-box {
+  animation: zoom-in-zoom-out 5s ease infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0.8, 0.8);
+  }
+
+  50% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(0.8, 0.8);
+  }
+}
+
+.gradient_button {
+  background: rgb(135, 113, 235);
+  background: -moz-linear-gradient(90deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  background: linear-gradient(90deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8771eb", endColorstr="#cdc0e9", GradientType=1);
+}
+
+.gradient_wall {
+  background: rgb(234, 224, 255);
+  background: -moz-linear-gradient(135deg, rgba(234, 224, 255, 1) 0%, rgba(251, 251, 253, 1) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(234, 224, 255, 1) 0%, rgba(251, 251, 253, 1) 100%);
+  background: linear-gradient(135deg, rgba(234, 224, 255, 1) 0%, rgba(251, 251, 253, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eae0ff", endColorstr="#fbfbfd", GradientType=1);
+}
+
+.gradient_card {
+  background: rgb(135, 113, 235);
+  background: -moz-linear-gradient(135deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  background: linear-gradient(135deg, rgba(135, 113, 235, 1) 0%, rgba(205, 192, 233, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8771eb", endColorstr="#cdc0e9", GradientType=1);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.child-container {
+  flex: 1 1 45%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+@media (max-width: 768px) {
+  .child-container {
+    flex: 1 1 100%;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #8771EB;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.loader::before {
+  border-color: #8771EB #0000;
+  animation: inherit;
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+
+.loader::after {
+  margin: 8px;
+}
+
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn)
+  }
+}
+
+
+body {
+  background-color: #e6e6e6;
+  width: 100%;
+  height: 100%;
+}
+
+#success_tic .page-body {
+  max-width: 300px;
+  background-color: #FFFFFF;
+  margin: 10% auto;
+}
+
+#success_tic .page-body .head {
+  text-align: center;
+}
+
+/* #success_tic .tic{
+  font-size:186px;
+} */
+#success_tic .close {
+  opacity: 1;
+  position: absolute;
+  right: 0px;
+  font-size: 30px;
+  padding: 3px 15px;
+  margin-bottom: 10px;
+}
+
+#success_tic .checkmark-circle {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.checkmark-circle .background {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #1ab394;
+  position: absolute;
+}
+
+#success_tic .checkmark-circle .checkmark {
+  border-radius: 5px;
+}
+
+#success_tic .checkmark-circle .checkmark.draw:after {
+  -webkit-animation-delay: 300ms;
+  -moz-animation-delay: 300ms;
+  animation-delay: 300ms;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-name: checkmark;
+  -moz-animation-name: checkmark;
+  animation-name: checkmark;
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  -moz-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  -o-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(135deg);
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#success_tic .checkmark-circle .checkmark:after {
+  opacity: 1;
+  height: 75px;
+  width: 37.5px;
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  -o-transform-origin: left top;
+  transform-origin: left top;
+  border-right: 15px solid #fff;
+  border-top: 15px solid #fff;
+  border-radius: 2.5px !important;
+  content: '';
+  left: 35px;
+  top: 80px;
+  position: absolute;
+}
+
+@-webkit-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+
+  20% {
+    height: 0;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  40% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+
+  100% {
+    height: 75px;
+    width: 37.5px;
+    opacity: 1;
+  }
+}
