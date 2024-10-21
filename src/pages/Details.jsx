@@ -38,7 +38,7 @@ const Details = () => {
 
         if (docSnap.exists()) {
             navigate('/home')
-        }ww
+        }
       
     }
     useEffect(() => {
